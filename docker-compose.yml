@@ -1,0 +1,34 @@
+version: "2.7.4"
+services:
+ 
+
+ 
+  discovery:
+    image: eureka-server
+    build:
+      context: ./eureka_server
+      dockerfile: dockerfile
+    ports:
+      - "8761:8761"
+      
+  velo:
+    build: 
+     context: ./velo__microservice
+     dockerfile: dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_2:3306/velo?user=root&password=elyes&autoReconnect=true&useSSL=false
+    image: "velo"
+    depends_on:
+      - mysql_2
+      - discovery      
+   
+  mysql_2:
+    image: "mysql:5.6"
+    environment:
+      - MYSQL_ROOT_PASSWORD=elyes 
+      - MYSQL_DATABASE=velo
+    ports:
+      - 3308:3306   

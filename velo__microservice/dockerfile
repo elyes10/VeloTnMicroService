@@ -1,0 +1,4 @@
+FROM openjdk:8 
+EXPOSE 8080
+ADD target/microservice-velo-exec.jar microservice-velo.jar
+ENTRYPOINT ["java", "-jar", "microservice-velo.jar"]
