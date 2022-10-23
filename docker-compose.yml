@@ -25,6 +25,32 @@ services:
       - mysql_2
       - discovery      
    
+  association:
+    build: 
+     context: ./velotn-MicroService_association
+     dockerfile: dockerfile
+    ports:
+      - "8091:8091"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql_3:3306/MicroserviceVelotn?user=root&password=yassine&autoReconnect=true&useSSL=false
+    image: "association"
+    depends_on:
+      - mysql_3
+      - discovery
+  balade:
+    build: 
+     context: ./balade
+     dockerfile: dockerfile
+    ports:
+      - "8096:8096"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:~/test?user=sa&password=&autoReconnect=true&useSSL=false
+    image: "balade"
+    depends_on:
+      - discovery
+   
   mysql_2:
     image: "mysql:5.6"
     environment:
@@ -32,3 +58,12 @@ services:
       - MYSQL_DATABASE=velo
     ports:
       - 3308:3306   
+  mysql_3:
+    image: "mysql:5.6"
+    environment:
+      - MYSQL_ROOT_PASSWORD=yassine 
+      - MYSQL_DATABASE=MicroserviceVelotn
+    ports:
+      - 3307:3306
+
+ 

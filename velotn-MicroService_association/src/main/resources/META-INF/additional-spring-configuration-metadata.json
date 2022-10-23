@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "pring.config.import",
+    "type": "java.lang.String",
+    "description": "A description for 'pring.config.import'"
+  },
+  {
+    "name": "eureka.client.server-url.default-zone",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.client.server-url.default-zone'"
+  }
+]}
