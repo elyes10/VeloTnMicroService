@@ -38,6 +38,18 @@ services:
     depends_on:
       - mysql_3
       - discovery
+  balade:
+    build: 
+     context: ./balade
+     dockerfile: dockerfile
+    ports:
+      - "8096:8096"
+    environment:
+      - eureka.client.serviceUrl.defaultZone=http://discovery:8761/eureka/
+      - SPRING_DATASOURCE_URL=jdbc:h2:file:~/test?user=sa&password=&autoReconnect=true&useSSL=false
+    image: "balade"
+    depends_on:
+      - discovery
    
   mysql_2:
     image: "mysql:5.6"
@@ -53,5 +65,5 @@ services:
       - MYSQL_DATABASE=MicroserviceVelotn
     ports:
       - 3307:3306
-               
+
  
