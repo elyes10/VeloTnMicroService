@@ -16,6 +16,7 @@ import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";
 import velos from "./components/velos/velos";
+import Balades from "./components/balades/balades";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -47,6 +48,7 @@ class App extends Component {
             <Route exact path="/register" component={Register} />
             <Route exact path="/shop" component={velos} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/balade" component={Balades} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
