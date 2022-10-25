@@ -13,11 +13,16 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Associations from "./components/associations/Associations";
+import AddAssociation from "./components/associations/AddAssociation";
+
 
 import "./App.css";
 import velos from "./components/velos/velos";
 import Balades from "./components/balades/Balades";
 import AddBalade from "./components/balades/AddBalade";
+import velobackend from "./components/velos/velobackend";
+import Add_velo from "./components/velos/Add_velo";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -45,14 +50,19 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
-            <Route exact path="/register" component={Register} />
+            <Route exact path="/" component={velos} />
+
             <Route exact path="/shop" component={velos} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/balade" component={Balades} />
-            <Route exact path="/add/balade" component={AddBalade} />
+            <Route exact path="/associations" component={Associations} />
             <Switch>
+            <PrivateRoute exact path="/back/associations" component={AddAssociation} />
+            <PrivateRoute exact path="/add/balade" component={AddBalade} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/register" component={Register} />
+              <PrivateRoute exact path="/velosback" component={velobackend} />
+              <PrivateRoute exact path="/Add_velo" component={Add_velo} />
             </Switch>
           </div>
         </Router>

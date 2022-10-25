@@ -1,21 +1,21 @@
 
-import bg from "../../assets/bgequip.jpg";
+
 import Logo from "../../assets/logott.png";
 import Card from "react-bootstrap/Card";
-import serv from "../../assets/serv.JPG";
+import associaionimg from "../../assets/associaionimg.png";
 import React, {useEffect, useState}  from 'react';
 import {Link} from "react-router-dom";
 import {useHistory} from "use-history";
 
 
-function Velos() {
+function Associations() {
 
     const [equipments, setEquipments] = useState([])
     const history = useHistory();
     const [filter, setFilter] = useState("");
 
     function refresh() {
-        const url = 'http://localhost:8080/velos';//api url
+        const url = 'http://localhost:8091/Associations';
         fetch(url).then(resp => resp.json())//calling url by method GET
             .then(resp => setEquipments(resp))//setting response to state overtime
             .catch(e => console.log('There is an issue with getting the information' , e))
@@ -25,7 +25,6 @@ function Velos() {
     useEffect(()=>{refresh()},[]);
     return (
         <div style={{
-            backgroundImage: `url(${bg})`, height: "100%",
             position: "absolute",
             left: "0",
             width: "100%",
@@ -34,19 +33,19 @@ function Velos() {
             <link rel="stylesheet" href=
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
+            
 
             <br/>
             <br/>
             <div style={{ marginTop: "-5px" }} className="row" >
                 <div className="col s8 offset-s2" style={{marginLeft:"510px"}}>
 
-                    <div style={{color: "#ffffff", justifyContent: "center", display: "flex",borderStyle:"dotted",borderColor:"#ff1187",maxWidth:"600px"}}>
-                        <h4 style={{fontSize:"32px"}}>Bikes shop</h4>
+                    <div style={{ justifyContent: "center", display: "flex",borderStyle:"dotted",borderColor:"#000000",maxWidth:"600px"}}>
+                        <h4 style={{fontSize:"32px"}}>Associations</h4>
                     </div>
                     <br/>
                     <div style={{maxWidth:"600px",marginBottom:"-25px"}}>
-                        <input style={{color:"white",width:"500px"}} type="text" placeholder="Rechercher.. " name="nom_site" value={filter}
+                        <input style={{width:"500px"}} type="text" placeholder="Rechercher.. " name="nom_site" value={filter}
                                onChange={(e) => {
                                    setFilter(e.target.value)
                                }} />
@@ -56,39 +55,44 @@ function Velos() {
 
                 </div>
             </div>
-            <button className="btn btn-outline-light" style={{display:"flex",float:"right",marginRight:"150px",marginTop:"100px"}} onClick={()=>history.push('/add_equipment')}>Ajouter MSAN</button>
+            {/* <button className="btn " style={{display:"flex",float:"right",marginRight:"150px",marginTop:"100px"}} onClick={()=>history.push('/add_association')}>Ajouter Association</button> */}
             <div className="container"
                  style={{display: "flex", overflow: "auto", height: "540px",marginTop:"110px"}}>
 
                 <div className="row justify-content-start" id="myItems" >
                     {equipments.map((item)=>
+                    <div className='mx-auto'>
                         <div className="cart col-4" hidden={(filter!=="")&&!(item.name.includes(filter))} style={{paddingLeft:"120px"}} >
 
                             <Card style={{
-                                width: '14rem',
+                                width: '18rem',
                                 background: "black",
-                                borderColor: "#ff1187",
+                                borderColor: "#00000",
                                 textAlign: "center",
 
                             }}>
 
 
 
-                                <a href="" style={{background: "blue"}}>
-                                    <Card.Img variant="top" src={serv}/>
+                                <a href='' style={{background: "blue"}}>
+                                    <Card.Img variant="top" src={associaionimg}/>
                                 </a>
                                 <div className="card-bod">
                                     <Card.Body>
-                                        <a href="" style={{background: "blue"}} >
-                                            <Card.Title><strong style={{color: "#ff1187",fontSize:"24px"}}>{item.name}</strong></Card.Title>
+                                        <a href='' style={{background: "blue"}} >
+                                            <Card.Title><strong style={{color: "#26a69a",fontSize:"24px"}}>{item.name}</strong></Card.Title>
+                                            <p>{item.email}</p>
+                                            <p>{item.numero}</p>
+                                            <p>{item.address}</p>
                                         </a>
                                     </Card.Body>
                                 </div>
                             </Card>
-                        </div>
+                        </div></div>
                     )}
 
 
+                
                 </div>
 
             </div>
@@ -98,5 +102,4 @@ function Velos() {
     );
 
 }
-
-export default Velos;
+export default Associations;
