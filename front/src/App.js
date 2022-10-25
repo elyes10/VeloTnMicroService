@@ -19,8 +19,9 @@ import AddAssociation from "./components/associations/AddAssociation";
 
 import "./App.css";
 import velos from "./components/velos/velos";
+import Balades from "./components/balades/Balades";
+import AddBalade from "./components/balades/AddBalade";
 import velobackend from "./components/velos/velobackend";
-import add_velo from "./components/velos/Add_velo";
 import Add_velo from "./components/velos/Add_velo";
 
 // Check for token to keep user logged in
@@ -53,10 +54,11 @@ class App extends Component {
 
             <Route exact path="/shop" component={velos} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/balade" component={Balades} />
             <Route exact path="/associations" component={Associations} />
-            
             <Switch>
             <PrivateRoute exact path="/back/associations" component={AddAssociation} />
+            <PrivateRoute exact path="/add/balade" component={AddBalade} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/register" component={Register} />
               <PrivateRoute exact path="/velosback" component={velobackend} />
