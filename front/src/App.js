@@ -19,10 +19,11 @@ import AddAssociation from "./components/associations/AddAssociation";
 
 import "./App.css";
 import velos from "./components/velos/velos";
-import Balades from "./components/balades/Balades";
+
 import AddBalade from "./components/balades/AddBalade";
 import velobackend from "./components/velos/velobackend";
 import Add_velo from "./components/velos/Add_velo";
+import Balades from "./components/balades/balades";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {

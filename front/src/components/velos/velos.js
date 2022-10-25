@@ -56,7 +56,7 @@ function Velos() {
 
                 </div>
             </div>
-            <button className="btn btn-outline-light" style={{display:"flex",float:"right",marginRight:"150px",marginTop:"100px"}} onClick={()=>history.push('/add_equipment')}>Ajouter MSAN</button>
+
             <div className="container"
                  style={{display: "flex", overflow: "auto", height: "540px",marginTop:"110px"}}>
 

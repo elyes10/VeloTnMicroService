@@ -16,7 +16,7 @@ import com.esprit.microservices.entity.Balade;
 import com.esprit.microservices.service.BaladeService;
 
 @RestController
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin
 public class BaladeController {
 	@Autowired
 	private BaladeService bs;

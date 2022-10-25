@@ -55,7 +55,7 @@ function AddBalade() {
     
             <br/>
             <br/>
-  <div>
+  <div >
     <h3>Liste des Balades</h3>
   <table clbal="table table-striped table-responsive-md">
 <thead>
@@ -78,7 +78,7 @@ function AddBalade() {
     <td clbal="text-info">{domain.destination}</td>
     <td clbal="text-info">{domain.date}</td>
     
-<button name="add" clbalName='btn btn-info '  onClick={(event)=>onDelete(event,domain.id)}><i clbal="fa fa-trash"></i> </button>
+<button name="add" className='btn btn-danger '  onClick={(event)=>onDelete(event,domain.id)}><i clbal="fa fa-trash"></i> Delete</button>
 </tr>
 ))}
 </tbody>

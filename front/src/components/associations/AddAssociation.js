@@ -77,6 +77,7 @@ function AddAssociation() {
 <tr>
     <th scope="row">{index}</th>
     <td class="text-info" >{domain.idAssociation}</td>
+    <td className="text-info">{domain.name}</td>
     <td class="text-info">{domain.email}</td>
     <td class="text-info">{domain.numero}</td>
     <td class="text-info">{domain.address}</td>
