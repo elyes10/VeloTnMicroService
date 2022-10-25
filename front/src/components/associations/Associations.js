@@ -33,28 +33,7 @@ function Associations() {
             <link rel="stylesheet" href=
                 "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand">
-                    <img src={Logo} alt="" width="110" height="60" className="d-inline-block align-text-top" style={{marginTop: "-16px"}}/>
-                    <strong style={{color: "#a3275f"}}> Tunisie Telecom</strong>
-                </a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarNavAltMarkup"
-                        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"/>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <div className="navbar-nav">
-                        <Link className="nav-item nav-link active" to={"/dashboard"}><strong
-                            style={{color: "#2983c3", fontSize: "18px"}}>Accueil</strong><span
-                            className="sr-only">(current)</span></Link>
-                        <Link className="nav-item nav-link" to={"/users"}><strong
-                            style={{color: "#2983c3", fontSize: "18px"}}>Utilisateurs</strong></Link>
-                        <Link className="nav-item nav-link" to={"/equipments"}><strong
-                            style={{color: "#2983c3", fontSize: "18px"}}>Equipments</strong></Link>
-                    </div>
-                </div>
-            </nav>
+            
 
             <br/>
             <br/>

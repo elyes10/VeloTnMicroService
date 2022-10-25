@@ -24,7 +24,7 @@ class Navbar extends Component {
                 <a className="nav-link" href="#">Balades</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="#"  >Associations</a>
+                <a className="nav-link " href="/associations"  >Associations</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link " href="#"  ><br/></a>
@@ -36,8 +36,8 @@ class Navbar extends Component {
                 <Link to="/" className="nav-link ">Gestion balades</Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link ">Gestion associations</Link>
-              </li>>
+                <Link to="/back/associations" className="nav-link ">Gestion associations</Link>
+              </li>
 
               <li className="nav-item" >
                 <Link to="/login" className="nav-link " style={{color:"#00a9ff"}}><strong>Login</strong></Link>

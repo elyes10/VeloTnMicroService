@@ -1643,7 +1643,7 @@
   "resolved" "https://registry.npmjs.org/aws4/-/aws4-1.8.0.tgz"
   "version" "1.8.0"
 
-"axios@^0.18.1":
+"axios@^0.18.0":
   "integrity" "sha512-0BfJq4NSfQXd+SkFdrvFbG7addhYSBA2mQwISr46pD6E5iqkWg02RAs8vyTT/j0RTnoYmeXauBuSv1qKwR179g=="
   "resolved" "https://registry.npmjs.org/axios/-/axios-0.18.1.tgz"
   "version" "0.18.1"
@@ -8180,7 +8180,7 @@
     "strip-ansi" "4.0.0"
     "text-table" "0.2.0"
 
-"react-dom@^16.6.3", "react-dom@^17.0.0 || ^18.0.0", "react-dom@>=16.14.0", "react-dom@>=16.6.0":
+"react-dom@^16.6.3", "react-dom@^16.8.0", "react-dom@^17.0.0 || ^18.0.0", "react-dom@>=16.14.0", "react-dom@>=16.6.0":
   "integrity" "sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-16.14.0.tgz"
   "version" "16.14.0"
@@ -8313,7 +8313,6 @@
     "loose-envify" "^1.4.0"
     "prop-types" "^15.6.2"
 
-
 "react-use-navigate@^0.1.1":
   "integrity" "sha512-FjSKKHmTy0DA0KBGsNlN97HVha3L3WCTRfXG2lucrgWjQGzqZZTKQ2FdCOZgE+rkBdBTAM6PLEV9MfUdm6MHlQ=="
   "resolved" "https://registry.npmjs.org/react-use-navigate/-/react-use-navigate-0.1.1.tgz"
@@ -8321,7 +8320,7 @@
   dependencies:
     "minimatch" "^3.0.4"
 
-"react@^16.6.3", "react@^16.8.6":
+"react@^0.14.0 || ^15.0.0-0 || ^16.0.0-0", "react@^16.14.0", "react@^16.6.3", "react@^16.8.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0-rc.1 || ^18.0.0", "react@^16.8.6", "react@^17.0.0 || ^18.0.0", "react@>=0.14.0", "react@>=15", "react@>=15.0.0", "react@>=16.14.0", "react@>=16.6.0", "react@>=16.8.0":
   "integrity" "sha512-0X2CImDkJGApiAlcf0ODKIneSwBPhqJawOa5wCtKbu7ZECrmS26NvtSILynQ66cgkT/RJ4LidJOc3bUESwmU8g=="
   "resolved" "https://registry.npmjs.org/react/-/react-16.14.0.tgz"
   "version" "16.14.0"
