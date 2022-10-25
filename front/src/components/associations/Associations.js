@@ -20,7 +20,7 @@ function Associations() {
             .then(resp => setEquipments(resp))//setting response to state overtime
             .catch(e => console.log('There is an issue with getting the information' , e))
     }
-    
+
 
     useEffect(()=>{refresh()},[]);
     return (
@@ -76,7 +76,7 @@ function Associations() {
 
                 </div>
             </div>
-            <button className="btn " style={{display:"flex",float:"right",marginRight:"150px",marginTop:"100px"}} onClick={()=>history.push('/add_association')}>Ajouter Association</button>
+            {/* <button className="btn " style={{display:"flex",float:"right",marginRight:"150px",marginTop:"100px"}} onClick={()=>history.push('/add_association')}>Ajouter Association</button> */}
             <div className="container"
                  style={{display: "flex", overflow: "auto", height: "540px",marginTop:"110px"}}>
 
