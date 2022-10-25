@@ -13,6 +13,9 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Associations from "./components/associations/Associations";
+import AddAssociation from "./components/associations/AddAssociation";
+
 
 import "./App.css";
 import velos from "./components/velos/velos";
@@ -50,7 +53,10 @@ class App extends Component {
 
             <Route exact path="/shop" component={velos} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/associations" component={Associations} />
+            
             <Switch>
+            <PrivateRoute exact path="/back/associations" component={AddAssociation} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/register" component={Register} />
               <PrivateRoute exact path="/velosback" component={velobackend} />
