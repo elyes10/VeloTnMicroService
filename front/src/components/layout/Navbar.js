@@ -33,10 +33,17 @@ class Navbar extends Component {
                 <Link to="/velosback" className="nav-link ">Gestion velos</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="#"  >Gestion balades</a>
+                <Link to="/" className="nav-link ">Gestion balades</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="#"  >Gestion Associations</a>
+                <Link to="/" className="nav-link ">Gestion associations</Link>
+              </li>>
+
+              <li className="nav-item" >
+                <Link to="/login" className="nav-link " style={{color:"#00a9ff"}}><strong>Login</strong></Link>
+              </li>
+              <li className="nav-item" >
+                <Link to="/dashboard" className="nav-link " style={{color:"#ab0369"}}><strong>Logout</strong></Link>
               </li>
             </ul>
           </div>
