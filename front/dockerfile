@@ -1,0 +1,13 @@
+FROM node:16
+EXPOSE 3000
+FROM node:16-alpine
+# Set the working directory to /app inside the container
+WORKDIR /app
+
+COPY ["package.json", "package-lock.json*","node_modules", "./"]
+
+
+
+COPY . .
+
+CMD [ "npm", "start" ]

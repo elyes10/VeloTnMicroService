@@ -59,7 +59,15 @@ services:
       - "5000:5000" 
     image: "userjs"
 
- 
+  react:
+    build: 
+     context: ./front
+     dockerfile: dockerfile     
+    ports:
+      - "3000:3000"
+    image: "react" 
+    depends_on:
+      - user   
  
    
   mysql_2:
