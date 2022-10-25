@@ -16,6 +16,9 @@ import Dashboard from "./components/dashboard/Dashboard";
 
 import "./App.css";
 import velos from "./components/velos/velos";
+import velobackend from "./components/velos/velobackend";
+import add_velo from "./components/velos/Add_velo";
+import Add_velo from "./components/velos/Add_velo";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -43,12 +46,14 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            <Route exact path="/" component={Landing} />
+            <Route exact path="/" component={velos} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/shop" component={velos} />
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/velosback" component={velobackend} />
+              <PrivateRoute exact path="/Add_velo" component={Add_velo} />
             </Switch>
           </div>
         </Router>

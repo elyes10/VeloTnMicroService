@@ -1,22 +1,26 @@
 import React, {useEffect, useState} from 'react';
-import background from "../../assets/workspace3.png";
+import background from "../../assets/gradienta-OzfD79w8ptA-unsplash.jpg";
 
-
-import {Link, useHistory} from "react-router-dom";
+import {useHistory} from "use-history";
 import {Button} from "@mui/material";
 import delimg from "../../assets/bin-delete.png";
+import bg from "../../assets/bgequip.jpg";
+import useNavigate from "react-use-navigate";
+
 function Velobackend() {
     const [overtime, setAdditions] = useState([])
+    const navigate = useNavigate();
     const history = useHistory();
+
     function refresh() {
-        const url = '/holidays/show';//api url
+        const url = 'http://localhost:8080/velos';//api url
         fetch(url).then(resp => resp.json())//calling url by method GET
             .then(resp => setAdditions(resp))//setting response to state overtime
     }
     useEffect(()=>{refresh();refresh()},[]);
 
     function Delete(id) {
-        fetch(`/holidays/delete/${id}`,
+        fetch(`http://localhost:8080/deleteVelo/${id}`,
             {
                 method: 'DELETE'
             }).then((result) => {
@@ -26,11 +30,15 @@ function Velobackend() {
         })
     }
     return (
-        <main style={{ backgroundImage: `url(${background})`}}>
+        <main style={{backgroundImage: `url(${background})`, height: "100%",
+            position: "absolute",
+            left: "0",
+            width: "100%",
+            overflow: "hidden"}}>
 
             <div className="main__container" >
-
-                <h1   style={{color: "#1e90ff",fontSize:"25px"}}><strong style={{color: "#1e90ff",fontSize:"30px"}}>Dashboard /</strong> Holidays</h1>
+<br/>
+                <h1   style={{color: "#ffffff",fontSize:"25px"}}><strong style={{color: "#ffffff",fontSize:"30px"}}>Dashboard /</strong> Bikes</h1>
                 <br/><br/><br/><br/><br/><br/>
 
                 <div className="tab-content">
@@ -40,19 +48,23 @@ function Velobackend() {
 
                         <br/>
                         <div className="text-right mb-4 clearfix">
-                            <button className="btn btn-primary add-btn" type="button" onClick={()=>history.push('/add_holiday')}><i className="fa fa-plus"></i> Add Holiday
-                            </button>
+                          <a href="/Add_velo">  <button className="btn btn-light add-btn" type="button"><i className="fa fa-plus"></i> Add bike
+                            </button> </a>
                         </div>
 
 
 
-                        <div className="payroll-table card">
+                        <div className="payroll-table card" >
                             <div className="table-responsive">
                                 <table className="table table-hover table-radius">
                                     <thead>
                                     <tr>
+                                        <th>Id</th>
                                         <th>Name</th>
-                                        <th>Date</th>
+                                        <th>Description</th>
+                                        <th>Stock</th>
+                                        <th>Price</th>
+
 
                                         <th className="text-right">Action</th>
                                     </tr>
@@ -60,9 +72,11 @@ function Velobackend() {
                                     <tbody>
                                     {overtime.map((item)=>
                                         <tr>
-                                            <th>{item.holidayName}</th>
-                                            <td>{item.holidayDate.slice(0,10)}</td>
-
+                                            <th>{item.id}</th>
+                                            <td>{item.name}</td>
+                                            <td>{item.description}</td>
+                                            <td>{item.stock}</td>
+                                            <td>{item.price}</td>
                                             <td className="text-right">
                                                 <Button
                                                     style={{
@@ -77,9 +91,9 @@ function Velobackend() {
 
                                                     }}
                                                     onClick={() => {
-                                                        Delete(item._id);
+                                                        Delete(item.id);
                                                         refresh();
-                                                        refresh();
+                                                          refresh();
 
                                                     }
                                                     }
